@@ -1,0 +1,37 @@
+{% comment %} {% render 'partials/head.liquid', title: 'Squad page' %} {% endcomment %}
+
+<h1>Messages</h1>
+
+{% if messages == empty %}
+    <h2>Er zijn nog geen berichten gepost</h2>
+  {% else  %}
+    <h2>Deze berichten zijn gepost:</h2>
+  {% endif %}
+
+
+<ul>
+  {% for ms in messages %}
+    <li>{{ ms }}</li>
+  {% endfor %}
+</ul>
+
+{% comment %} {{ messages }} {% endcomment %}
+
+
+<form method="post" action="/berichten">
+  <label>Tekstje
+    <input type="text" name="tekstje">
+  </label>
+
+  <button type="submit">Voeg tekst toe</button>
+
+</form>
+
+
+{% unless messages == empty %}
+  YOOOOO
+{% endunless %}
+
+
+
+{% comment %} {% render 'partials/foot.liquid', squads: squads %} {% endcomment %}
