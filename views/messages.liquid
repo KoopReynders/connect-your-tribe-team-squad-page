@@ -9,11 +9,13 @@
   {% endif %}
 
 
-<ul>
-  {% for ms in messages %}
-    <li>{{ ms }}</li>
-  {% endfor %}
-</ul>
+{% unless messages == empty %}
+  <ul>
+    {% for ms in messages %}
+      <li>{{ ms }}</li>
+    {% endfor %}
+  </ul>
+{% endunless %}
 
 {% comment %} {{ messages }} {% endcomment %}
 
@@ -28,9 +30,11 @@
 </form>
 
 
+{% comment %} 
 {% unless messages == empty %}
   YOOOOO
-{% endunless %}
+{% endunless %} 
+{% endcomment %}
 
 
 
